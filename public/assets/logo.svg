@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 410 100" width="410" height="100">
   <defs>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&amp;display=swap');
       .xq-mark {
         opacity: 0;
         animation: revealMark 0.7s ease-out 0.1s forwards;
@@ -52,44 +53,13 @@
   <line class="divider-line" x1="96" y1="22" x2="96" y2="78" stroke="#F0F4FA" stroke-width="1" stroke-opacity="0.12"/>
 
   <!-- ══ WORDMARK ══ -->
-  <g transform="translate(110, 28)" fill="url(#l-text)">
-    <g class="letter l-x" transform="translate(0, 0)">
-      <path d="M 0.74 0.3 H 5.92 A 0.7 0.7 0 0 1 6.54 0.69 L 28.54 28.81 A 0.7 0.7 0 0 1 28.49 29.54 H 23.31 A 0.7 0.7 0 0 1 22.69 29.15 L 0.69 1.03 A 0.7 0.7 0 0 1 0.74 0.3 Z" />
-      <path d="M 28.49 0.3 H 23.31 A 0.7 0.7 0 0 0 22.69 0.69 L 0.69 28.81 A 0.7 0.7 0 0 0 0.74 29.54 H 5.92 A 0.7 0.7 0 0 0 6.54 29.15 L 28.54 1.03 A 0.7 0.7 0 0 0 28.49 0.3 Z" />
-    </g>
-    <g class="letter l-o" transform="translate(34, 0)">
-      <path fill-rule="evenodd" d="M 0.74 0.3 H 28.49 A 0.7 0.7 0 0 1 29.23 1.05 V 28.8 A 0.7 0.7 0 0 1 28.49 29.54 H 0.74 A 0.7 0.7 0 0 1 0 28.8 V 1.05 A 0.7 0.7 0 0 1 0.74 0.3 Z M 5.92 5.49 H 23.31 A 0.7 0.7 0 0 1 24.05 6.23 V 23.64 A 0.7 0.7 0 0 1 23.31 24.38 H 5.92 A 0.7 0.7 0 0 1 5.18 23.64 V 6.23 A 0.7 0.7 0 0 1 5.92 5.49 Z" />
-    </g>
-    <g class="letter l-v" transform="translate(68, 0)">
-      <path d="M 0.74 0.3 H 5.92 A 0.7 0.7 0 0 1 6.59 0.74 L 17.13 29.1 A 0.7 0.7 0 0 1 16.48 29.54 H 12.02 A 0.7 0.7 0 0 1 11.37 29.1 L 0.09 0.74 A 0.7 0.7 0 0 1 0.74 0.3 Z" />
-      <path d="M 28.49 0.3 H 23.31 A 0.7 0.7 0 0 0 22.64 0.74 L 12.1 29.1 A 0.7 0.7 0 0 0 12.75 29.54 H 17.21 A 0.7 0.7 0 0 0 17.86 29.1 L 29.14 0.74 A 0.7 0.7 0 0 0 28.49 0.3 Z" />
-    </g>
-    <g class="letter l-i" transform="translate(102, 0)">
-      <path d="M 0.74 0.3 H 7.26 A 0.7 0.7 0 0 1 7.96 1.05 V 28.8 A 0.7 0.7 0 0 1 7.26 29.54 H 0.74 A 0.7 0.7 0 0 1 0 28.8 V 1.05 A 0.7 0.7 0 0 1 0.74 0.3 Z" />
-    </g>
-    <g class="letter l-q" transform="translate(115, 0)">
-      <path fill-rule="evenodd" d="M 0.74 0.3 H 28.49 A 0.7 0.7 0 0 1 29.23 1.05 V 28.8 A 0.7 0.7 0 0 1 28.49 29.54 H 0.74 A 0.7 0.7 0 0 1 0 28.8 V 1.05 A 0.7 0.7 0 0 1 0.74 0.3 Z M 5.92 5.49 H 23.31 A 0.7 0.7 0 0 1 24.05 6.23 V 23.64 A 0.7 0.7 0 0 1 23.31 24.38 H 5.92 A 0.7 0.7 0 0 1 5.18 23.64 V 6.23 A 0.7 0.7 0 0 1 5.92 5.49 Z" />
-      <path d="M 17.75 17.93 H 22.93 A 0.7 0.7 0 0 1 23.55 18.32 L 28.54 28.81 A 0.7 0.7 0 0 1 28.49 29.54 H 23.31 A 0.7 0.7 0 0 1 22.69 29.15 L 17.7 18.66 A 0.7 0.7 0 0 1 17.75 17.93 Z" />
-    </g>
-    <g class="letter l-l" transform="translate(149, 0)">
-      <path d="M 5.92 22.89 V 1.05 A 0.7 0.7 0 0 0 5.18 0.3 H 0.74 A 0.7 0.7 0 0 0 0 1.05 V 23.64 A 0.7 0.7 0 0 0 0.74 24.38 H 4.44 A 0.7 0.7 0 0 0 5.18 25.12 V 28.8 A 0.7 0.7 0 0 0 5.92 29.54 H 22.18 A 0.7 0.7 0 0 0 22.92 28.8 V 24.38 A 0.7 0.7 0 0 0 22.18 23.64 H 6.67 A 0.7 0.7 0 0 0 5.92 22.89 Z" />
-    </g>
-    <g class="letter l-a" transform="translate(177, 0)">
-      <path fill-rule="evenodd" d="M 28.49 5.49 H 24.79 A 0.7 0.7 0 0 0 24.05 4.75 V 1.05 A 0.7 0.7 0 0 0 23.3 0.3 H 5.93 A 0.7 0.7 0 0 0 5.19 1.05 V 4.75 A 0.7 0.7 0 0 0 4.44 5.49 H 0.74 A 0.7 0.7 0 0 0 0 6.23 V 28.8 A 0.7 0.7 0 0 0 0.74 29.54 H 5.19 A 0.7 0.7 0 0 0 5.25 29.54 C 5.63 29.51 5.93 29.19 5.93 28.8 V 17.92 H 23.3 V 28.8 C 23.3 29.19 23.6 29.51 23.97 29.54 C 24.0 29.54 24.02 29.54 24.05 29.54 H 28.49 A 0.7 0.7 0 0 0 29.23 28.8 V 6.23 A 0.7 0.7 0 0 0 28.49 5.49 Z M 5.93 11.99 V 6.98 C 5.93 6.64 6.15 6.36 6.46 6.26 H 22.77 C 23.08 6.36 23.3 6.64 23.3 6.98 V 11.99 H 5.93 Z" />
-    </g>
-    <g class="letter l-b" transform="translate(211, 0)">
-      <path d="M 0.74 0.3 H 5.92 A 0.7 0.7 0 0 1 6.62 1.05 V 28.8 A 0.7 0.7 0 0 1 5.92 29.54 H 0.74 A 0.7 0.7 0 0 1 0 28.8 V 1.05 A 0.7 0.7 0 0 1 0.74 0.3 Z" />
-      <path fill-rule="evenodd" d="M 5.92 0.3 H 23.31 A 0.7 0.7 0 0 1 24.05 1.05 V 13.96 A 0.7 0.7 0 0 1 23.31 14.7 H 5.92 Z M 11.1 5.49 H 18.13 V 9.51 H 11.1 Z" />
-      <path fill-rule="evenodd" d="M 5.92 14.7 H 23.31 A 0.7 0.7 0 0 1 24.05 15.44 V 28.8 A 0.7 0.7 0 0 1 23.31 29.54 H 5.92 Z M 11.1 19.89 H 18.13 V 24.35 H 11.1 Z" />
-    </g>
-    <g class="letter l-s" transform="translate(245, 0)">
-      <path d="M 5.93 6.97 V 11.29 A 0.7 0.7 0 0 0 6.67 12.03 H 23.31 A 0.7 0.7 0 0 0 24.06 12.77 V 16.45 A 0.7 0.7 0 0 0 24.8 17.19 H 28.49 A 0.7 0.7 0 0 0 29.23 17.93 V 23.64 A 0.7 0.7 0 0 0 28.49 24.38 H 24.8 A 0.7 0.7 0 0 0 24.06 25.12 V 28.8 A 0.7 0.7 0 0 0 23.31 29.54 H 0.74 A 0.7 0.7 0 0 0 0 28.8 V 24.38 A 0.7 0.7 0 0 0 0.74 23.64 H 22.57 A 0.7 0.7 0 0 0 23.31 22.9 V 17.61 A 0.7 0.7 0 0 0 22.57 16.87 H 5.92 A 0.7 0.7 0 0 0 5.18 16.12 V 12.45 A 0.7 0.7 0 0 0 4.43 11.71 H 0.74 A 0.7 0.7 0 0 0 0 10.96 V 6.23 A 0.7 0.7 0 0 0 0.74 5.49 H 4.44 A 0.7 0.7 0 0 0 5.18 4.75 V 1.05 A 0.7 0.7 0 0 0 5.93 0.3 H 28.49 A 0.7 0.7 0 0 0 29.23 1.05 V 5.49 A 0.7 0.7 0 0 0 28.49 6.23 H 6.67 A 0.7 0.7 0 0 0 5.93 6.97 Z" />
-    </g>
-  </g>
+  <text x="110" y="57" fill="url(#l-text)" font-family="'Outfit', sans-serif" font-weight="700" font-size="36" letter-spacing="0">
+    <tspan class="letter l-x">X</tspan><tspan class="letter l-o">o</tspan><tspan class="letter l-v">v</tspan><tspan class="letter l-i">i</tspan><tspan class="letter l-q">q</tspan><tspan class="letter l-l">L</tspan><tspan class="letter l-a">a</tspan><tspan class="letter l-b">b</tspan><tspan class="letter l-s">s</tspan>
+  </text>
 
   <!-- ══ TAGLINE ══ -->
   <text class="tagline" x="111" y="78"
-    font-family="'Roboto', 'Helvetica Neue', Arial, sans-serif"
+    font-family="'Outfit', 'Helvetica Neue', Arial, sans-serif"
     font-weight="600" font-size="16" fill="#2DD4B0" fill-opacity="0.85"
     letter-spacing="3.8">INTELLIGENT BY DESIGN</text>
 </svg>
