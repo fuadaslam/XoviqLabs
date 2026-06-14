@@ -1178,7 +1178,7 @@ body.overflow-hidden {
   letter-spacing: .08em; text-transform: uppercase;
 }
 .form-input {
-  background: rgba(255, 255, 255, 0.02) padding-box,
+  background: rgba(12, 16, 24, 0.9) padding-box,
               linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)) border-box;
   border: 1px solid transparent;
   border-radius: 10px; padding: .85rem 1.1rem;
@@ -1193,6 +1193,14 @@ body.overflow-hidden {
               linear-gradient(135deg, var(--teal), var(--sapphire)) border-box;
   border: 1px solid transparent;
   box-shadow: 0 0 20px rgba(45,212,176,0.12);
+}
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover, 
+.form-input:-webkit-autofill:focus, 
+.form-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #0c1018 inset !important;
+  -webkit-text-fill-color: var(--cloud) !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
 .form-select {
   appearance: none; cursor: pointer;
@@ -1209,6 +1217,9 @@ body.overflow-hidden {
   border: 1px solid rgba(45,212,176,0.25);
   border-radius: 10px; padding: 1rem 1.25rem;
   color: var(--teal); font-size: .9rem;
+}
+.form-success[hidden] {
+  display: none;
 }
 
 /* ════════════════════════════════════
