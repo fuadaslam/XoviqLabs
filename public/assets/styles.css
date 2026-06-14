@@ -1,44 +1,89 @@
-/* ── Reset & Base ── */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+@layer reset, base, theme, components, utilities;
 
-:root {
-  --teal:        #2DD4B0;
-  --teal-dim:    rgba(45,212,176,0.08);
-  --teal-border: rgba(45,212,176,0.25);
-  --sapphire:    #3B5FDB;
-  --midnight:    #05070c; /* Deeper dark background */
-  --mid2:        rgba(12, 16, 24, 0.7); /* Translucent for glassmorphism */
-  --mid3:        rgba(17, 22, 34, 0.8);
-  --cloud:       #F0F4FA;
-  --muted:       rgba(240,244,250,0.6);
-  --gradient:    linear-gradient(135deg, #2DD4B0 0%, #3B5FDB 100%);
-  --glass-border: rgba(255, 255, 255, 0.05);
-  --glass-border-hover: rgba(45, 212, 176, 0.3);
-  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+@layer reset {
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 }
 
-html { scroll-behavior: smooth; }
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-.lenis.lenis-stopped { overflow: hidden; }
-.lenis.lenis-smooth iframe { pointer-events: none; }
+@layer theme {
+  :root {
+    color-scheme: dark;
+    /* Tier 1: Literal */
+    --color-teal: #2DD4B0;
+    --color-sapphire: #3B5FDB;
+    --color-midnight: #05070c;
+    --color-cloud: #F0F4FA;
+    --color-white: #ffffff;
+    --color-black: #000000;
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--midnight);
-  color: var(--cloud);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+    /* Tier 2: Semantic */
+    --color-accent: var(--color-teal);
+    --color-secondary: var(--color-sapphire);
+    --color-bg: var(--color-midnight);
+    --color-text: var(--color-cloud);
+    --color-muted: color-mix(in oklab, var(--color-text), transparent 40%);
+
+    /* Tier 3: UI & Legacy Aliases */
+    --teal: var(--color-accent);
+    --sapphire: var(--color-secondary);
+    --midnight: var(--color-bg);
+    --cloud: var(--color-text);
+    --muted: var(--color-muted);
+    
+    --teal-dim: color-mix(in oklab, var(--color-accent), transparent 92%);
+    --teal-border: color-mix(in oklab, var(--color-accent), transparent 75%);
+    --mid2: color-mix(in oklab, #0c1018, transparent 30%);
+    --mid3: color-mix(in oklab, #111622, transparent 20%);
+    --gradient: linear-gradient(135deg in oklab, var(--color-accent) 0%, var(--color-secondary) 100%);
+    --glass-border: color-mix(in oklab, var(--color-white), transparent 95%);
+    --glass-border-hover: color-mix(in oklab, var(--color-accent), transparent 70%);
+    --card-shadow: 0 8px 32px 0 color-mix(in oklab, var(--color-black), transparent 63%);
+  }
 }
 
-h1, h2, h3, h4, h5 { 
-  font-family: 'Outfit', sans-serif; 
-  letter-spacing: -.03em; 
-  font-weight: 700;
+@layer base {
+  html { scroll-behavior: smooth; }
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+  .lenis.lenis-stopped { overflow: hidden; }
+  .lenis.lenis-smooth iframe { pointer-events: none; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :is(h1, h2, h3, h4, h5) { 
+    font-family: 'Outfit', sans-serif; 
+    letter-spacing: -.03em; 
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  :is(p, li, .sec-desc, .feat-body, .svc-text, .step-desc, .testi-quote, .cta-p, .ft-desc) {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
-.container { max-width: 1440px; margin: 0 auto; padding: 0 4rem; }
+@layer components {
+  .container { max-width: 1440px; margin-inline: auto; padding-inline: 4rem; }
 
 .g-text {
   background: var(--gradient);
@@ -62,7 +107,7 @@ h1, h2, h3, h4, h5 {
 
 /* ── Scroll-Driven Animations (Native CSS) ── */
 @supports (animation-timeline: view()) {
-  .sr, .sr-l, .sr-r { 
+  :is(.sr, .sr-l, .sr-r) { 
     transition: none; 
     opacity: 1; 
     transform: none; 
@@ -102,42 +147,46 @@ h1, h2, h3, h4, h5 {
 /* ── Buttons ── */
 .btn {
   display: inline-flex; align-items: center; gap: .6rem;
-  padding: .9rem 2.2rem; border-radius: 10px;
+  padding-block: .9rem; padding-inline: 2.2rem; 
+  border-radius: 10px; min-block-size: 24px;
   font-family: 'Inter', sans-serif; font-weight: 500; font-size: .95rem;
   text-decoration: none; cursor: pointer; border: none;
   transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s, border-color .25s, color .25s;
 }
 .btn-primary {
-  background: var(--gradient); color: #fff;
+  background: var(--gradient); color: var(--color-white);
   position: relative; overflow: hidden;
   z-index: 1;
-}
-.btn-primary::after {
-  content: ''; position: absolute; top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.6s ease;
-  z-index: -1;
-}
-.btn-primary:hover::after {
-  left: 100%;
-}
-.btn-primary:hover { 
-  transform: translateY(-3px) scale(1.02); 
-  box-shadow: 0 18px 40px rgba(45,212,176,.35), 0 0 15px rgba(45,212,176,.15); 
+  &::after {
+    content: ''; position: absolute; inset-block-start: 0; inset-inline-start: -100%;
+    inline-size: 100%; block-size: 100%;
+    background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--color-white), transparent 80%), transparent);
+    transition: inset-inline-start 0.6s ease;
+    z-index: -1;
+  }
+  &:hover { 
+    transform: translateY(-3px) scale(1.02); 
+    box-shadow: 0 18px 40px color-mix(in oklab, var(--color-accent), transparent 65%), 0 0 15px color-mix(in oklab, var(--color-accent), transparent 85%); 
+    &::after {
+      inset-inline-start: 100%;
+    }
+  }
 }
 .btn-outline {
-  background: transparent; color: var(--cloud);
+  background: transparent; color: var(--color-text);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   position: relative; overflow: hidden;
+  &::before {
+    content: ''; position: absolute; inset: 0; background: var(--teal-dim); opacity: 0; transition: opacity .3s; z-index: -1;
+  }
+  &:hover { 
+    border-color: var(--color-accent); color: var(--color-accent); 
+    box-shadow: 0 0 20px color-mix(in oklab, var(--color-accent), transparent 85%); 
+    &::before { opacity: 1; }
+  }
 }
-.btn-outline::before {
-  content: ''; position: absolute; inset: 0; background: var(--teal-dim); opacity: 0; transition: opacity .3s; z-index: -1;
-}
-.btn-outline:hover { border-color: var(--teal); color: var(--teal); box-shadow: 0 0 20px rgba(45,212,176,.15); }
-.btn-outline:hover::before { opacity: 1; }
 
 /* ── Section Labels ── */
 .label {
@@ -180,18 +229,21 @@ h1, h2, h3, h4, h5 {
 
 .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
 .nav-links a {
-  color: rgba(240,244,250,0.55); text-decoration: none; font-size: .88rem;
+  color: color-mix(in oklab, var(--color-text), transparent 45%); text-decoration: none; font-size: .88rem;
   transition: color .2s; letter-spacing: .02em; white-space: nowrap;
-  position: relative; padding: 0.4rem 0;
-}
-.nav-links a::after {
-  content: ''; position: absolute; bottom: 0; left: 50%;
-  width: 0; height: 1.5px; background: var(--teal);
-  transition: width 0.3s ease, left 0.3s ease;
-}
-.nav-links a:hover { color: var(--cloud); }
-.nav-links a:hover::after, .nav-links a.nav-active::after {
-  width: 100%; left: 0;
+  position: relative; padding-block: 0.4rem; padding-inline: 0; min-block-size: 24px; display: inline-flex; align-items: center; justify-content: center;
+
+  &::after {
+    content: ''; position: absolute; inset-block-end: 0; inset-inline-start: 50%;
+    inline-size: 0; block-size: 1.5px; background: var(--color-accent);
+    transition: inline-size 0.3s ease, inset-inline-start 0.3s ease;
+  }
+
+  &:hover { color: var(--color-text); }
+
+  &:is(:hover, .nav-active)::after {
+    inline-size: 100%; inset-inline-start: 0;
+  }
 }
 
 .nav-right { display: flex; align-items: center; gap: .75rem; flex-shrink: 0; }
@@ -676,11 +728,11 @@ h1, h2, h3, h4, h5 {
 }
 
 .filter-btn {
-  background: rgba(12, 16, 24, 0.4);
+  background: color-mix(in oklab, #0c1018, transparent 60%);
   border: 1px solid var(--glass-border);
   color: var(--muted);
-  padding: .6rem 1.4rem;
-  border-radius: 50px;
+  padding-block: .6rem; padding-inline: 1.4rem;
+  border-radius: 50px; min-block-size: 24px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: .85rem;
@@ -1178,7 +1230,7 @@ body.overflow-hidden {
   letter-spacing: .08em; text-transform: uppercase;
 }
 .form-input {
-  background: rgba(12, 16, 24, 0.9) padding-box,
+  background: linear-gradient(rgba(12, 16, 24, 0.9), rgba(12, 16, 24, 0.9)) padding-box,
               linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)) border-box;
   border: 1px solid transparent;
   border-radius: 10px; padding: .85rem 1.1rem;
@@ -1189,18 +1241,19 @@ body.overflow-hidden {
 }
 .form-input::placeholder { color: rgba(240,244,250,0.28); }
 .form-input:focus {
-  background: rgba(255, 255, 255, 0.04) padding-box,
+  background: linear-gradient(rgba(12, 16, 24, 0.9), rgba(12, 16, 24, 0.9)) padding-box,
               linear-gradient(135deg, var(--teal), var(--sapphire)) border-box;
   border: 1px solid transparent;
   box-shadow: 0 0 20px rgba(45,212,176,0.12);
+  color: var(--cloud) !important;
 }
 .form-input:-webkit-autofill,
 .form-input:-webkit-autofill:hover, 
 .form-input:-webkit-autofill:focus, 
 .form-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px #0c1018 inset !important;
-  -webkit-text-fill-color: var(--cloud) !important;
-  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0 1000px #0c1018 inset !important;
+  -webkit-text-fill-color: #F0F4FA !important;
+  color: #F0F4FA !important;
 }
 .form-select {
   appearance: none; cursor: pointer;
@@ -1554,5 +1607,7 @@ body.overflow-hidden {
   0% { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
 }
+
+} /* End of @layer components */
 
 
