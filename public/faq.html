@@ -1,96 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frequently Asked Questions — XoviqLabs</title>
-  <link rel="icon" type="image/png" href="/assets/logo-xoviq.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ | XoviqLabs</title>
+  <meta name="description" content="Frequently asked questions about XoviqLabs services, process, pricing, and timelines." />
+  <link rel="icon" type="image/png" href="assets/logo-xoviq.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/styles.css?v=1.3" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
   <style>
-    .legal-content {
-      padding: 120px 0 80px;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.8;
-    }
-    .legal-content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      color: #fff;
-      font-family: 'Outfit', sans-serif;
-    }
-    .legal-content h2 {
-      font-size: 1.4rem;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      color: #2DD4B0;
-      font-family: 'Outfit', sans-serif;
-    }
-    .legal-content p, .legal-content ul {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-    }
-    .legal-content a {
-      color: #3B5FDB;
-      text-decoration: underline;
-    }
+    .page-hero { padding: 8rem 0 3rem; text-align: center; }
+    .page-kicker { font-family: var(--font-mono); color: var(--cyan); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; display: block; }
+    .page-title { font-family: var(--font-sans); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+    .page-desc { color: var(--text-muted); max-width: 560px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; }
+    .faq-section { padding: 3rem 0 6rem; }
+    .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    .faq-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; overflow: hidden; }
+    .faq-question { width: 100%; background: none; border: none; color: var(--text-main); font-family: var(--font-sans); font-size: 1rem; font-weight: 600; padding: 1.4rem 1.5rem; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: color 0.2s; }
+    .faq-question:hover { color: var(--cyan); }
+    .faq-icon { font-size: 1.4rem; flex-shrink: 0; transition: transform 0.3s ease; color: var(--cyan); line-height: 1; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-answer p { color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; padding: 0 1.5rem 1.4rem; margin: 0; }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
   </style>
 </head>
-<body>
-
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="/" class="logo">
-      <img src="/assets/logo.svg" alt="XoviqLabs" class="logo-img" />
-    </a>
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/#services">Services</a></li>
-      <li><a href="/#about">About</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <a href="/#cta" class="nav-cta">Start a Project</a>
-      <div class="hamburger"><span></span><span></span><span></span></div>
+<body class="bg-background text-foreground">
+  <nav id="navbar" class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo-icon.svg" alt="XoviqLabs Icon" class="nav-logo-icon" />
+        <span class="nav-logo-text"><span class="font-poppins">Xoviq</span><span class="font-poppins text-cyan">Labs</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#services">SERVICES</a>
+        <a href="index.html#work">WORK</a>
+        <a href="index.html#about">ABOUT</a>
+      </div>
+      <a href="index.html#contact" class="nav-cta">Contact</a>
     </div>
-  </div>
-</nav>
-<div class="nav-backdrop" id="navBackdrop"></div>
+  </nav>
 
-<main id="main-content">
-  <section class="legal-content">
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-kicker">Got Questions?</span>
+        <h1 class="page-title">Frequently Asked <span class="text-cyan">Questions</span></h1>
+        <p class="page-desc">Everything you need to know about working with XoviqLabs. Can't find your answer? <a href="mailto:info@xoviqlabs.com" style="color:var(--cyan)">Reach out directly.</a></p>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">What services does XoviqLabs offer?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>We specialize in custom web development, Android &amp; iOS mobile apps, AI integration &amp; intelligent automation, and UI/UX design &amp; branding. We handle the full stack — from strategy and design through to deployment and ongoing support.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How long does a typical project take?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Timelines vary by scope. A standard marketing website typically takes 2–4 weeks. A full-featured web application or mobile app ranges from 6–16 weeks depending on complexity. We'll provide a detailed timeline during the discovery phase before any work begins.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How does pricing work?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>We work on a project-based model with clearly defined milestones and payment schedules. After our initial discovery call, we send a detailed proposal with a fixed price covering all agreed deliverables. No hidden fees, no scope-creep surprises.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Which markets do you serve?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>We primarily serve clients in Saudi Arabia (KSA), the United Arab Emirates (UAE), and India. We have deep knowledge of these regional markets — local compliance, consumer expectations, and business culture — which allows us to build products that truly fit the context they operate in.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Will I work directly with the developers?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes, always. There are no account managers or intermediaries. You communicate directly with the engineers and designers building your product — faster decisions, clearer feedback loops, zero information loss.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Do you provide post-launch support?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Absolutely. Every project includes a post-launch support window, and we offer ongoing maintenance and enhancement retainers with 24/7 emergency support for critical issues.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What technologies do you work with?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>We use modern, scalable technologies including React, Next.js, Node.js, Python, Flutter, TensorFlow, AWS, Google Cloud, and Firebase — selected based on what best fits each project's requirements.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How do I get started?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Fill out the contact form on our <a href="index.html#contact" style="color:var(--cyan)">homepage</a> or email us at <a href="mailto:info@xoviqlabs.com" style="color:var(--cyan)">info@xoviqlabs.com</a>. We'll schedule a free discovery call and put together a tailored proposal.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
     <div class="container">
-      <h1>Frequently Asked Questions</h1>
-      
-      <h2>What services does XoviqLabs offer?</h2>
-      <p>We specialize in custom software development, AI &amp; automation integration, modern website design, IT support, and comprehensive digital marketing strategies.</p>
-      
-      <h2>Where are you located?</h2>
-      <p>We are a remote-first company with a strong presence and dedicated services for clients in Saudi Arabia, the United Arab Emirates, and India.</p>
-      
-      <h2>How do we start a project with you?</h2>
-      <p>Simply reach out via our contact page or fill out the project form on our website. We will get back to you within 24 hours to schedule a free consultation.</p>
-      
-      <h2>Do you provide post-launch support?</h2>
-      <p>Yes, we offer ongoing support and maintenance packages to ensure your software or website remains secure, updated, and high-performing after launch.</p>
-      
-      <h2>What technologies do you use?</h2>
-      <p>We utilize modern, scalable technologies such as React, Next.js, Node.js, Python, Flutter, TensorFlow, AWS, Google Cloud, and Firebase.</p>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-brand">
+            <img src="assets/logo-icon.svg" alt="XoviqLabs Icon" class="nav-logo-icon" />
+            <span class="nav-logo-text"><span class="font-poppins">Xoviq</span><span class="font-poppins text-cyan">Labs</span></span>
+          </a>
+          <p class="footer-tagline font-mono">Building the future, one line at a time.</p>
+        </div>
+        <nav class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="faq.html">FAQ</a>
+          <a href="privacypolicy.html">Privacy Policy</a>
+          <a href="termsandconditions.html">Terms &amp; Conditions</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="font-mono">&copy; <span id="footer-year"></span> XoviqLabs. All rights reserved.</p>
+      </div>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer>
-  <div class="container">
-    <div class="ft-bottom">
-      <p class="ft-copy">© 2025 XoviqLabs. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-
-<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-<script src="/assets/scripts.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
 </body>
 </html>
