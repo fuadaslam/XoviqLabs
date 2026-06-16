@@ -1,7 +1,7 @@
 // ── EmailJS config ──────────────────────────────────────────────────────────
 // Sign up at https://www.emailjs.com, create a service + template, then paste
 // your credentials here.
-const EMAILJS_PUBLIC_KEY  = '6AxY_rlLDiZVso3bVPuMd';   // Account → API Keys
+const EMAILJS_PUBLIC_KEY  = '8luMZTHA70mjEhdlz';   // Account → API Keys
 const EMAILJS_SERVICE_ID  = 'service_5ttae88';   // Email Services tab
 const EMAILJS_TEMPLATE_ID = 'template_wjzuxlg';  // Email Templates tab
 
@@ -127,7 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.reset();
       } catch (err) {
         console.error('EmailJS error:', err);
-        statusEl.textContent = 'Something went wrong. Please email us directly at info@xoviqlabs.com';
+        const detail = err?.text || err?.message || JSON.stringify(err);
+        statusEl.textContent = `Error ${err?.status || ''}: ${detail}`;
         statusEl.className = 'form-status error';
       } finally {
         submitBtn.disabled = false;
