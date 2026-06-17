@@ -15,7 +15,7 @@
   <!-- Loading Splash Screen -->
   <div id="splash-screen" class="fixed-splash">
     <div class="splash-content">
-      <img src="assets/logo.svg" alt="XoviqLabs Logo" class="splash-logo" onerror="this.src='Xoviq Logo.jpeg'" />
+      <object data="assets/logo.svg" type="image/svg+xml" class="splash-logo" aria-label="XoviqLabs Logo"></object>
       <div class="splash-progress-wrapper">
         <div class="splash-progress-bar">
           <div id="splash-progress-fill"></div>
@@ -38,8 +38,21 @@
         <a href="#about">ABOUT</a>
       </div>
       <a href="#contact" class="nav-cta">Contact</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="#services" class="mobile-link">SERVICES</a>
+      <a href="#work" class="mobile-link">WORK</a>
+      <a href="#about" class="mobile-link">ABOUT</a>
+      <a href="#contact" class="mobile-link mobile-link-cta">CONTACT</a>
+    </div>
+  </div>
 
   <main>
     <!-- Hero Section -->
@@ -52,7 +65,7 @@
         <p class="hero-subtitle font-mono">Web · App · Design · AI-Powered</p>
         <h1 class="hero-title">
           <div class="hero-title-line"><span class="text-white">XOVIQ</span></div>
-          <div class=\"hero-title-line\"><span class="text-cyan">LABS</span></div>
+          <div class="hero-title-line"><span class="text-cyan">LABS</span></div>
         </h1>
         <p class="hero-desc">
           Building world-class websites, apps, logos & visuals for brands that dare to stand out.

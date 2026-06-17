@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Scroll Reveal Logic ---
   const srElements = document.querySelectorAll('.sr');
   
-  const srObserver = new IntersectionObserver((entries, observer) => {
+  const srObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
@@ -90,6 +90,22 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
 
+  // --- Mobile Menu ---
+  const hamburger  = document.getElementById('nav-hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  function toggleMenu(open) {
+    hamburger.classList.toggle('open', open);
+    mobileMenu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  hamburger?.addEventListener('click', () => toggleMenu(!mobileMenu.classList.contains('open')));
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
+  });
+
   // --- Contact Form → EmailJS ---
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
@@ -127,8 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.reset();
       } catch (err) {
         console.error('EmailJS error:', err);
-        const detail = err?.text || err?.message || JSON.stringify(err);
-        statusEl.textContent = `Error ${err?.status || ''}: ${detail}`;
+        statusEl.textContent = 'Something went wrong. Please email us directly at info@xoviqlabs.com';
         statusEl.className = 'form-status error';
       } finally {
         submitBtn.disabled = false;
