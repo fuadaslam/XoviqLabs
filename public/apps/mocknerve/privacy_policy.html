@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - MockNerve</title>
+  <meta name="description"
+    content="Privacy Policy for MockNerve offline exam preparation mobile application by xoviqlabs.">
+  <link rel="icon" type="image/png" href="../../assets/mocknerve-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-body: #F8FAFC;
+      --bg-surface: #FFFFFF;
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --border-focus: #CBD5E1;
+      --primary: #6366F1;
+      --primary-hover: #4F46E5;
+      --accent-bg: #F1F5F9;
+      --code-bg: #F1F5F9;
+      --callout-bg: #F8FAFC;
+      --callout-border: #E2E8F0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-body: #090D16;
+        --bg-surface: #0F172A;
+        --text-primary: #F8FAFC;
+        --text-secondary: #94A3B8;
+        --text-muted: #64748B;
+        --border: #1E293B;
+        --border-focus: #334155;
+        --primary: #818CF8;
+        --primary-hover: #A5B4FC;
+        --accent-bg: #1E293B;
+        --code-bg: #1E293B;
+        --callout-bg: #111827;
+        --callout-border: #1E293B;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-primary);
+      line-height: 1.75;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Global Nav Header */
+    .top-nav {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .brand-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    /* Document Container */
+    .doc-container {
+      max-width: 860px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+    }
+
+    .doc-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 640px) {
+      .doc-card {
+        padding: 24px 20px;
+        border-radius: 12px;
+      }
+
+      .doc-container {
+        margin: 20px auto 40px;
+        padding: 0 16px;
+      }
+    }
+
+    /* Title & Meta */
+    .doc-header {
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .meta-date {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Content Typography */
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-top: 36px;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    ul,
+    ol {
+      margin-left: 20px;
+      margin-bottom: 18px;
+      color: var(--text-secondary);
+    }
+
+    li {
+      margin-bottom: 8px;
+      padding-left: 4px;
+    }
+
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    /* Callout Box */
+    .callout {
+      background: var(--callout-bg);
+      border: 1px solid var(--callout-border);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 20px 0;
+    }
+
+    .callout p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    /* Table of Contents */
+    .toc-box {
+      background: var(--accent-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+    }
+
+    .toc-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .toc-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 8px 16px;
+    }
+
+    .toc-list li {
+      margin: 0;
+      padding: 0;
+      font-size: 13.5px;
+    }
+
+    .toc-list a {
+      color: var(--text-secondary);
+    }
+
+    .toc-list a:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Footer */
+    .doc-footer {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="https://xoviqlabs.com" class="brand">
+        <img src="../../assets/mocknerve-logo.png" alt="MockNerve Logo" class="brand-logo">
+        <span>MockNerve</span>
+      </a>
+      <a href="https://xoviqlabs.com" class="nav-link">xoviqlabs.com ↗</a>
+    </div>
+  </header>
+
+  <!-- Document Body -->
+  <main class="doc-container">
+    <article class="doc-card">
+
+      <header class="doc-header">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <img src="../../assets/mocknerve-logo.png" alt="MockNerve Logo"
+            style="width: 48px; height: 48px; border-radius: 10px; object-fit: contain;">
+          <div>
+            <span class="badge" style="margin-bottom: 4px;">Legal & Privacy</span>
+            <h1 style="margin-bottom: 0;">Privacy Policy</h1>
+          </div>
+        </div>
+        <div class="meta-date">Last updated: October 4, 2026 · Effective date: October 4, 2026</div>
+      </header>
+
+      <!-- Quick Index -->
+      <nav class="toc-box">
+        <div class="toc-title">Table of Contents</div>
+        <ul class="toc-list">
+          <li><a href="#section-1">1. Introduction & Platform Model</a></li>
+          <li><a href="#section-2">2. User-Supplied Content & Data</a></li>
+          <li><a href="#section-3">3. How We Use Information</a></li>
+          <li><a href="#section-4">4. Local Storage & Permissions</a></li>
+          <li><a href="#section-5">5. Optional Cloud Backup</a></li>
+          <li><a href="#section-6">6. Optional AI Integration</a></li>
+          <li><a href="#section-7">7. Third-Party Services</a></li>
+          <li><a href="#section-8">8. Data Retention & Deletion</a></li>
+          <li><a href="#section-9">9. Security</a></li>
+          <li><a href="#section-10">10. Children's Privacy</a></li>
+          <li><a href="#section-11">11. Independent Disclaimer</a></li>
+          <li><a href="#section-12">12. Changes & Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- 1. Introduction -->
+      <section id="section-1">
+        <h2>1. Introduction</h2>
+        <p>
+          This Privacy Policy explains how <strong>xoviqlabs</strong> ("we", "us", or "our") handles your information in
+          connection with the <strong>MockNerve</strong> mobile application ("App").
+        </p>
+        <p>
+          <strong>MockNerve is an offline-first study platform and practice test engine.</strong> We provide the software
+          framework and tools for candidates to organize their studies, practice mock tests, track error patterns, and
+          review flashcards.
+        </p>
+        <div class="callout">
+          <p>
+            <strong>Platform Only — No Preloaded Content:</strong> MockNerve does <strong>not</strong> supply, publish,
+            host, or sell questions, answers, exam papers, or official curriculum content. All question banks, syllabi,
+            notes, and study data are created, imported, or managed entirely by you (the user).
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. Information We Collect -->
+      <section id="section-2">
+        <h2>2. Information We Collect & User-Supplied Content</h2>
+
+        <h3>A. User-Created & Imported Study Data</h3>
+        <p>
+          All questions, answer keys, syllabus outlines, flashcards, and notes that you enter or import into the App
+          remain your exclusive property and are stored strictly on your local device in a private, sandboxed SQLite
+          database. We do not transmit, inspect, index, or store your imported study materials on our servers.
+        </p>
+
+        <h3>B. Local Study Activity</h3>
+        <p>
+          As you practice with your imported questions, the App records local analytical data on-device:
+        </p>
+        <ul>
+          <li><strong>Practice Metrics:</strong> Quiz attempts, answer choices, accuracy rates, and time taken per
+            question.</li>
+          <li><strong>Revision Data:</strong> Error vault entries, custom bookmarks, and study streak counts.</li>
+          <li><strong>App Preferences:</strong> Selected active syllabus, theme choice (Dark/Light mode), and local
+            timer configurations.</li>
+        </ul>
+
+        <h3>C. Information We Do NOT Collect</h3>
+        <p>MockNerve operates with zero user profiling. We do <strong>not</strong> collect:</p>
+        <ul>
+          <li>Personal identifying details (such as your name, email address, or phone number).</li>
+          <li>User account credentials or passwords.</li>
+          <li>Precise GPS location or background location data.</li>
+          <li>Device advertising identifiers (IDFA / GAID) for tracking or ad profiling.</li>
+          <li>Contacts, media libraries, photos, camera, or microphone data.</li>
+        </ul>
+      </section>
+
+      <!-- 3. How We Use Information -->
+      <section id="section-3">
+        <h2>3. How We Use Information</h2>
+        <p>Because all processing happens on your device, your data is used solely to execute the App's core
+          features:</p>
+        <ul>
+          <li>Shuffling and presenting tests from your user-imported question banks.</li>
+          <li>Calculating local performance statistics, accuracy scores, and speed analytics.</li>
+          <li>Organizing your personalized Error Vault and bookmarks for targeted revision.</li>
+          <li>Persisting your custom syllabus hierarchies and study preferences.</li>
+        </ul>
+      </section>
+
+      <!-- 4. Local & Offline Storage -->
+      <section id="section-4">
+        <h2>4. Local & Offline Storage & Permissions</h2>
+        <p>
+          MockNerve functions 100% offline. The database, test player engine, and analytics run entirely on-device
+          without requiring an active network connection.
+        </p>
+        <ul>
+          <li><strong>Document Picker / File Access:</strong> When you choose to import your custom question files or
+            export local database backups, the App utilizes the operating system's standard file picker (Storage Access
+            Framework). The App does not scan or access any other files on your device.</li>
+          <li><strong>No Intrusive Permissions:</strong> MockNerve requests no runtime access to your camera,
+            microphone, contacts, or location.</li>
+        </ul>
+      </section>
+
+      <!-- 5. Optional Cloud Backup -->
+      <section id="section-5">
+        <h2>5. Optional Google Drive Cloud Backup</h2>
+        <p>
+          MockNerve offers an optional cloud backup and restore feature so you can safeguard your self-created study
+          database against device loss or transfer.
+        </p>
+        <ul>
+          <li><strong>Direct Device-to-Cloud Transfer:</strong> If enabled, the backup transfer occurs directly between
+            your mobile device and Google Cloud servers using official Google OAuth APIs.</li>
+          <li><strong>Restricted Scope:</strong> The App requests only the restricted <code>drive.appdata</code> scope
+            (Application Data folder). MockNerve can only access its own backup file and cannot read, view, or modify any
+            other files in your Google Drive.</li>
+          <li><strong>No Middleman Servers:</strong> xoviqlabs never intercepts, views, or stores your Google Drive
+            credentials or backup files.</li>
+        </ul>
+      </section>
+
+      <!-- 6. Optional AI Integration -->
+      <section id="section-6">
+        <h2>6. Optional AI Integration (Gemini AI)</h2>
+        <p>
+          MockNerve includes an optional AI Tutor feature to assist you in understanding concepts and questions you have
+          imported.
+        </p>
+        <ul>
+          <li><strong>Bring Your Own Key (BYOK):</strong> You provide your own personal API key obtained from Google AI
+            Studio.</li>
+          <li><strong>Hardware-Encrypted Key Storage:</strong> Your API key is stored exclusively on your device using
+            hardware-backed secure storage (Android KeyStore / iOS Keychain via Expo SecureStore). It is never sent to
+            xoviqlabs.</li>
+          <li><strong>Direct API Communication:</strong> When you request an explanation, the specific question prompt is
+            sent directly from your device to Google’s Generative Language API.</li>
+        </ul>
+      </section>
+
+      <!-- 7. Third-Party Services -->
+      <section id="section-7">
+        <h2>7. Third-Party Services & Privacy Links</h2>
+        <p>
+          MockNerve does not include third-party advertising SDKs, behavioral analytics trackers, or data-broker
+          libraries. If you choose to use optional third-party integrations, their privacy practices are governed by
+          their respective policies:
+        </p>
+        <ul>
+          <li><strong>Google Identity & Google Drive:</strong> <a href="https://policies.google.com/privacy"
+              target="_blank" rel="noopener noreferrer">Google Privacy Policy ↗</a></li>
+          <li><strong>Google Gemini API:</strong> <a href="https://ai.google.dev/terms" target="_blank"
+              rel="noopener noreferrer">Google AI Studio & Gemini API Terms ↗</a></li>
+        </ul>
+      </section>
+
+      <!-- 8. Data Retention & Deletion -->
+      <section id="section-8">
+        <h2>8. Data Retention & Deletion</h2>
+        <p>
+          Because all your questions, tests, and progress are stored locally on your device, you maintain complete
+          control over your data at all times:
+        </p>
+        <ul>
+          <li><strong>In-App Reset:</strong> You can clear test histories, reset error vaults, or remove imported
+            question banks anytime inside the App.</li>
+          <li><strong>Immediate Deletion on Uninstall:</strong> Uninstalling MockNerve or clearing application storage in
+            your device settings permanently and immediately deletes all local databases, imported questions, API keys,
+            and study progress.</li>
+          <li><strong>Cloud Backup Management:</strong> You can delete any saved cloud backups directly from Google
+            Drive or revoke app access through your Google Account Security Dashboard.</li>
+        </ul>
+      </section>
+
+      <!-- 9. Security -->
+      <section id="section-9">
+        <h2>9. Security</h2>
+        <p>
+          We employ industry-standard on-device security practices:
+        </p>
+        <ul>
+          <li>Sensitive credentials (such as optional user API keys) are stored in secure, hardware-encrypted device
+            storage.</li>
+          <li>Local SQLite databases reside strictly within the operating system's sandboxed application storage.</li>
+          <li>All external communication (e.g., Google OAuth or Gemini API) is conducted over standard HTTPS/TLS
+            encryption.</li>
+        </ul>
+      </section>
+
+      <!-- 10. Children's Privacy -->
+      <section id="section-10">
+        <h2>10. Children's Privacy</h2>
+        <p>
+          MockNerve is a study platform intended for general audiences and adult learners preparing for competitive and
+          professional examinations. We do not knowingly collect or solicit personal information from children under the
+          age of 13.
+        </p>
+      </section>
+
+      <!-- 11. Independent Application -->
+      <section id="section-11">
+        <h2>11. Independent Software & Content Disclaimer</h2>
+        <p>
+          <strong>Independent Platform:</strong> MockNerve is an independent software tool developed by xoviqlabs. It is
+          not affiliated with, authorized by, endorsed by, or in any way officially connected with any government agency,
+          public service commission, recruitment board, or educational institution.
+        </p>
+        <p>
+          <strong>User Content Responsibility:</strong> Because MockNerve provides only the platform engine and does not
+          supply preloaded questions or syllabus materials, users are solely responsible for ensuring that any questions,
+          materials, or study notes they upload or import comply with applicable laws and copyright standards.
+        </p>
+      </section>
+
+      <!-- 12. Changes & Contact -->
+      <section id="section-12">
+        <h2>12. Changes to This Privacy Policy & Contact</h2>
+        <p>
+          We may update this Privacy Policy periodically. Any updates will be published directly at this URL with a
+          revised "Last updated" date.
+        </p>
+        <p>
+          If you have any questions, feedback, or concerns regarding this Privacy Policy, please contact us:
+        </p>
+        <ul>
+          <li><strong>Organization:</strong> xoviqlabs</li>
+          <li><strong>Website:</strong> <a href="https://xoviqlabs.com" target="_blank">https://xoviqlabs.com</a></li>
+          <li><strong>Email:</strong> <a href="mailto:info@xoviqlabs.com">info@xoviqlabs.com</a></li>
+        </ul>
+      </section>
+
+      <footer class="doc-footer">
+        <p>© 2026 xoviqlabs. All rights reserved. · MockNerve</p>
+      </footer>
+
+    </article>
+  </main>
+
+</body>
+
+</html>
