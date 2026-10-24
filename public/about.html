@@ -4,138 +4,108 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Us | XoviqLabs</title>
-  <meta name="description" content="Learn about XoviqLabs — who we are, what drives us, and how we build world-class digital products." />
+  <meta name="description" content="Learn about XoviqLabs — a new software studio building custom mobile apps and web platforms with integrated AI." />
   <link rel="icon" type="image/png" href="assets/logo-xoviq.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="apple-touch-icon" href="assets/logo-xoviq.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
   <style>
-    .page-hero {
-      padding: 8rem 0 4rem;
-      text-align: center;
-    }
-    .page-kicker {
-      font-family: var(--font-mono);
-      color: var(--cyan);
-      font-size: 0.85rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      display: block;
-    }
-    .page-title {
-      font-family: var(--font-sans);
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-    }
-    .page-desc {
-      color: var(--text-muted);
-      max-width: 620px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-    .content-section {
-      padding: 4rem 0;
-    }
-    .content-block {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .content-block h2 {
-      font-family: var(--font-sans);
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--mint);
-    }
-    .content-block p {
-      color: var(--text-muted);
-      line-height: 1.9;
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-    }
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .value-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
-    }
-    .value-card h3 {
-      font-family: var(--font-sans);
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .value-card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.7;
-      margin: 0;
-    }
+    .page-hero { padding: 9rem 0 3.5rem; text-align: center; }
+    .content-box { max-width: 860px; margin: 0 auto; }
+    .content-box h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; margin: 2.5rem 0 1rem; color: #fff; }
+    .content-box h2:first-child { margin-top: 0; }
+    .content-box p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    .values-bento { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-top: 2rem; }
+    @media (min-width: 640px) { .values-bento { grid-template-columns: 1fr 1fr; } }
+    .val-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem; backdrop-filter: blur(16px); }
+    .val-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
   </style>
 </head>
-<body class="bg-background text-foreground">
+<body>
+  <!-- Ambient Canvas Background -->
+  <div class="ambient-wrapper">
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-glow ambient-glow-1"></div>
+    <div class="ambient-glow ambient-glow-2"></div>
+  </div>
+
+  <!-- Navbar -->
   <nav id="navbar" class="navbar">
     <div class="navbar-inner">
       <a href="index.html" class="nav-brand">
-        <img src="assets/logo-icon.svg" alt="XoviqLabs Icon" class="nav-logo-icon" />
-        <span class="nav-logo-text"><span class="font-poppins">Xoviq</span><span class="font-poppins text-cyan">Labs</span></span>
+        <img src="assets/logo-xoviq.png" alt="XoviqLabs Logo" class="nav-logo-img" />
+        <span class="nav-brand-text"><span>XOVIQ</span><span class="highlight">LABS</span></span>
       </a>
       <div class="nav-links">
         <a href="index.html#services">SERVICES</a>
-        <a href="index.html#work">WORK</a>
-        <a href="index.html#about">ABOUT</a>
+        <a href="index.html#why-us">WHY US</a>
+        <a href="index.html#process">PROCESS</a>
+        <a href="about.html" style="color:#fff;">ABOUT</a>
+        <a href="faq.html">FAQ</a>
       </div>
-      <a href="index.html#contact" class="nav-cta">Contact</a>
+      <div class="nav-actions">
+        <a href="index.html#contact" class="nav-cta">Get a Quote &rarr;</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="index.html#services" class="mobile-link">SERVICES</a>
+      <a href="index.html#why-us" class="mobile-link">WHY US</a>
+      <a href="index.html#process" class="mobile-link">PROCESS</a>
+      <a href="about.html" class="mobile-link">ABOUT</a>
+      <a href="faq.html" class="mobile-link">FAQ</a>
+      <a href="index.html#contact" class="mobile-link mobile-link-cta">GET A QUOTE</a>
+    </div>
+  </div>
 
   <main>
     <section class="page-hero">
       <div class="container">
-        <span class="page-kicker">Who We Are</span>
-        <h1 class="page-title">About <span class="text-cyan">XoviqLabs</span></h1>
-        <p class="page-desc">We are an elite collective of engineers, designers, and innovators building world-class digital products for brands that dare to stand out.</p>
+        <span class="section-kicker">Our Story</span>
+        <h1 class="section-title">About <span class="text-gradient-cyan">XoviqLabs.</span></h1>
+        <p class="section-subtext" style="max-width: 640px; margin: 0 auto;">A modern development studio building AI-powered web and mobile applications from the ground up.</p>
       </div>
     </section>
 
-    <section class="content-section">
+    <section class="section-padding" style="padding-top: 0;">
       <div class="container">
-        <div class="content-block">
-          <h2>Our Story</h2>
-          <p>XoviqLabs was founded with a singular mission: to bridge the gap between cutting-edge technology and real business outcomes. We're not just developers — we're strategic partners who understand both the technical landscape and the commercial realities our clients face.</p>
-          <p>From day one, we committed to an AI-first philosophy — integrating intelligent automation into every solution we build, giving our clients a competitive edge that compounds over time.</p>
+        <div class="content-box">
+          <h2>Who We Are</h2>
+          <p>XoviqLabs is a newly founded software development studio. We started XoviqLabs with a clear mission: to make it simple and accessible for founders, entrepreneurs, and businesses to build modern web and mobile apps powered by the latest AI technologies.</p>
+          
+          <p>We are a hands-on, passionate team of developers and designers. Because we are starting out, we put our absolute best effort into every client project—delivering clean code, responsive design, and smart AI features that truly work.</p>
 
           <h2>What We Do</h2>
-          <p>We build world-class websites, mobile applications, AI-powered automation systems, and complete digital experiences. Our work spans three markets — KSA, UAE, and India — and we bring deep regional expertise to every engagement.</p>
-          <p>When you partner with XoviqLabs, you work directly with the experts. No middlemen, no account managers passing messages. Direct access to the people building your product.</p>
+          <p>Our core focus is simple and specialized:</p>
+          <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li><strong>Cross-Platform Mobile Apps:</strong> iOS and Android apps built with Flutter, designed for speed and smooth performance.</li>
+            <li><strong>Modern Web Applications:</strong> Full-stack web apps, SaaS dashboards, and landing platforms built with Next.js and React.</li>
+            <li><strong>Custom AI Integration:</strong> Adding smart AI chatbots, automated workflows, document analyzers, and OpenAI/Gemini features directly into your product.</li>
+          </ul>
 
-          <div class="values-grid">
-            <div class="value-card">
-              <h3 class="text-cyan">AI-First</h3>
-              <p>Every solution we build has intelligence baked in from the start — not bolted on as an afterthought.</p>
+          <h2>Why Work With a New Studio?</h2>
+          <div class="values-bento">
+            <div class="val-card">
+              <h3 class="text-cyan">✦ Undivided Focus</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem; margin:0;">As a new studio, your app is our priority. We give your project maximum attention and care.</p>
             </div>
-            <div class="value-card">
-              <h3 class="text-mint">Transparency</h3>
-              <p>Weekly demos, clear milestones, and direct communication at every stage. No surprises.</p>
+            <div class="val-card">
+              <h3 class="text-mint">✦ Lean &amp; Efficient</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem; margin:0;">We operate without the bloat of traditional agencies, ensuring maximum ROI and velocity for your product.</p>
             </div>
-            <div class="value-card">
-              <h3 class="text-cyan">Precision</h3>
-              <p>We sweat the details — from pixel-perfect UI to rock-solid infrastructure and performance.</p>
+            <div class="val-card">
+              <h3 class="text-cyan">✦ Direct Communication</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem; margin:0;">No middle managers. You communicate directly with the developers writing your code.</p>
             </div>
-            <div class="value-card">
-              <h3 class="text-mint">Partnership</h3>
-              <p>We measure our success by your outcomes. When you grow, we grow with you.</p>
+            <div class="val-card">
+              <h3 class="text-mint">✦ Latest Modern Tech</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem; margin:0;">We build with modern frameworks and native AI tools from day one, so your product is future-proof.</p>
             </div>
           </div>
         </div>
@@ -145,26 +115,39 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-brand">
-            <img src="assets/logo-icon.svg" alt="XoviqLabs Icon" class="nav-logo-icon" />
-            <span class="nav-logo-text"><span class="font-poppins">Xoviq</span><span class="font-poppins text-cyan">Labs</span></span>
-          </a>
-          <p class="footer-tagline font-mono">Building the future, one line at a time.</p>
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="assets/logo-xoviq.png" alt="XoviqLabs Logo" class="footer-logo-img" />
+            <span class="nav-brand-text"><span>XOVIQ</span><span class="highlight">LABS</span></span>
+          </div>
+          <p class="footer-tagline">A software development studio building AI-powered mobile apps and modern web applications for startups and businesses.</p>
         </div>
-        <nav class="footer-links">
-          <a href="about.html">About Us</a>
-          <a href="faq.html">FAQ</a>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms.html">Terms &amp; Conditions</a>
-        </nav>
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#why-us">Why Choose Us</a></li>
+            <li><a href="index.html#process">Process</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Legal &amp; Contact</h4>
+          <ul class="footer-nav-list">
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="termsandconditions.html">Terms of Service</a></li>
+            <li><a href="index.html#contact">Get a Quote</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-bottom">
-        <p class="font-mono">&copy; <span id="footer-year"></span> XoviqLabs. All rights reserved.</p>
+      <div class="footer-bottom-bar">
+        <p class="footer-copy">&copy; <span id="footer-year"></span> XoviqLabs. All rights reserved.</p>
       </div>
     </div>
   </footer>
+  <script src="assets/scripts.js"></script>
   <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

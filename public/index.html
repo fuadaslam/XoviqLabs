@@ -3,26 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>XoviqLabs | Premium Web Design & Custom AI Development</title>
-  <meta name="description" content="XoviqLabs is an elite collective building world-class websites, responsive apps, and intelligent automation systems." />
+  <title>XoviqLabs | AI-Powered Web &amp; Mobile App Development Studio</title>
+  <meta name="description" content="XoviqLabs builds custom mobile apps and modern web applications with intelligent AI integrations. We help founders and businesses turn ideas into reality." />
   <link rel="icon" type="image/png" href="assets/logo-xoviq.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="apple-touch-icon" href="assets/logo-xoviq.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
-<body class="bg-background text-foreground">
-  <!-- Ambient Background Orbs -->
-  <div class="ambient-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+<body>
+  <!-- Ambient Canvas & Glow Background -->
+  <div class="ambient-wrapper">
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-glow ambient-glow-1"></div>
+    <div class="ambient-glow ambient-glow-2"></div>
+    <div class="ambient-glow ambient-glow-3"></div>
   </div>
 
   <!-- Loading Splash Screen -->
   <div id="splash-screen" class="fixed-splash">
     <div class="splash-content">
-      <object data="assets/logo.svg" type="image/svg+xml" class="splash-logo" aria-label="XoviqLabs Logo"></object>
+      <img src="assets/logo-xoviq.png" alt="XoviqLabs" class="splash-emblem" />
+      <div class="splash-brand">
+        <span class="text-white">XOVIQ</span><span class="text-cyan">LABS</span>
+      </div>
       <div class="splash-progress-wrapper">
         <div class="splash-progress-bar">
           <div id="splash-progress-fill"></div>
@@ -32,220 +35,350 @@
     </div>
   </div>
 
-  <!-- Navbar -->
+  <!-- Floating Navigation -->
   <nav id="navbar" class="navbar">
     <div class="navbar-inner">
       <a href="#top" class="nav-brand">
-        <img src="assets/logo-icon.svg" alt="XoviqLabs Icon" class="nav-logo-icon" />
-        <span class="nav-logo-text"><span class="font-poppins">Xoviq</span><span class="font-poppins text-cyan">Labs</span></span>
+        <img src="assets/logo-xoviq.png" alt="XoviqLabs Logo" class="nav-logo-img" />
+        <span class="nav-brand-text">
+          <span>XOVIQ</span><span class="highlight">LABS</span>
+        </span>
+        <span class="nav-status-badge">
+          <span class="pulse-dot"></span> Open for New Projects
+        </span>
       </a>
+
       <div class="nav-links">
         <a href="#services">SERVICES</a>
-        <a href="#work">WORK</a>
-        <a href="#about">ABOUT</a>
+        <a href="#why-us">WHY US</a>
+        <a href="#process">PROCESS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="faq.html">FAQ</a>
       </div>
-      <a href="#contact" class="nav-cta">Contact</a>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+
+      <div class="nav-actions">
+        <a href="#contact" class="nav-cta">Get a Free Quote &rarr;</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile Menu Overlay -->
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-inner">
       <a href="#services" class="mobile-link">SERVICES</a>
-      <a href="#work" class="mobile-link">WORK</a>
-      <a href="#about" class="mobile-link">ABOUT</a>
-      <a href="#contact" class="mobile-link mobile-link-cta">CONTACT</a>
+      <a href="#why-us" class="mobile-link">WHY US</a>
+      <a href="#process" class="mobile-link">HOW WE WORK</a>
+      <a href="about.html" class="mobile-link">ABOUT</a>
+      <a href="faq.html" class="mobile-link">FAQ</a>
+      <a href="#contact" class="mobile-link mobile-link-cta">GET A QUOTE</a>
     </div>
   </div>
 
   <main>
     <!-- Hero Section -->
-    <section id="top" class="hero-section">
-      <div class="hero-bg">
-        <img src="assets/Hero.gif" alt="Hero Background" class="hero-video" />
-        <div class="hero-overlay"></div>
-      </div>
-      <div class="hero-content sr">
-        <p class="hero-subtitle font-mono">Web · App · Design · AI-Powered</p>
-        <h1 class="hero-title">
-          <div class="hero-title-line"><span class="text-gradient-primary">XOVIQ</span></div>
-          <div class="hero-title-line"><span class="text-gradient-secondary">LABS</span></div>
-        </h1>
-        <p class="hero-desc">
-          Building world-class websites, apps, logos & visuals for brands that dare to stand out.
-        </p>
-        <div class="hero-actions">
-          <a href="#work" class="btn-outline-glass">Projects</a>
-          <a href="#contact" class="btn-primary-cyan">Get a Quote</a>
+    <section id="top" class="hero-section hero-centered">
+      <div class="container">
+        <div class="hero-text-content sr text-center">
+          <div class="hero-pill-badge mx-auto">
+            <span class="pulse-dot"></span> XoviqLabs Studio
+          </div>
+          
+          <h1 class="hero-title display-title">
+            We Build Intelligent <br/><span class="text-gradient-cyan">Mobile &amp; Web Apps.</span>
+          </h1>
+
+          <p class="hero-desc mx-auto">
+            XoviqLabs is a modern development studio. We design and build fast, native mobile applications and scalable web platforms with seamless AI integration.
+          </p>
+
+          <div class="hero-actions justify-center">
+            <a href="#contact" class="btn-primary">Start a Project &rarr;</a>
+            <a href="#services" class="btn-glass">View Capabilities</a>
+          </div>
+
+          <div class="hero-tech-strip justify-center mt-xl mb-xl">
+            <span class="hero-tech-label">Powered By Modern Tech</span>
+            <div class="hero-tech-tags justify-center">
+              <span class="tech-pill">Flutter</span>
+              <span class="tech-pill">React &amp; Next.js</span>
+              <span class="tech-pill">OpenAI</span>
+              <span class="tech-pill">Node.js</span>
+            </div>
+          </div>
+
+          <!-- Glass UI Mock Preview -->
+          <div class="hero-glass-preview mx-auto sr">
+            <div class="glass-header">
+              <div class="window-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+              <div class="glass-tabs">
+                <span class="glass-tab active">Mobile Architecture</span>
+                <span class="glass-tab">Custom LLM Engine</span>
+                <span class="glass-tab">React/Next.js Core</span>
+              </div>
+            </div>
+            <div class="glass-body">
+              <div class="glass-sidebar">
+                <div class="skeleton-line w-full"></div>
+                <div class="skeleton-line w-3/4"></div>
+                <div class="skeleton-line w-5/6"></div>
+                <div class="skeleton-line w-1/2 mt-4"></div>
+              </div>
+              <div class="glass-main">
+                <div class="skeleton-block"></div>
+                <div class="glass-grid">
+                  <div class="skeleton-box"></div>
+                  <div class="skeleton-box"></div>
+                  <div class="skeleton-box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Stats Section -->
-    <section id="stats" class="stats-section">
-      <div class="container sr">
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-num text-cyan font-sans">50+</div>
-            <div class="stat-label font-mono">Projects Delivered</div>
+    <!-- Studio Pillars -->
+    <section id="why-us" class="stats-section">
+      <div class="container">
+        <div class="stats-grid sr">
+          <div class="stat-item">
+            <div class="stat-number text-cyan font-display">100%</div>
+            <div class="stat-desc">Direct Builder Communication</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-num text-mint font-sans">3</div>
-            <div class="stat-label font-mono">Markets Served</div>
+          <div class="stat-item">
+            <div class="stat-number text-mint font-display">Fast</div>
+            <div class="stat-desc">Rapid MVP Delivery</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-num text-cyan font-sans">98%</div>
-            <div class="stat-label font-mono">Client Satisfaction</div>
+          <div class="stat-item">
+            <div class="stat-number text-cyan font-display">AI-First</div>
+            <div class="stat-desc">Smart Features Built-In</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-num text-mint font-sans">24/7</div>
-            <div class="stat-label font-mono">Support Available</div>
+          <div class="stat-item">
+            <div class="stat-number text-mint font-display">Agile</div>
+            <div class="stat-desc">Lean Execution</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services-section">
-      <div class="container sr">
-        <div class="services-header">
-          <h2 class="services-title font-sans text-gradient-primary">SERVICES</h2>
-          <p class="services-kicker font-mono text-cyan">What We Build — End to End</p>
+    <section id="services" class="section-padding">
+      <div class="container">
+        <div class="section-head sr">
+          <span class="section-kicker">What We Build</span>
+          <h2 class="section-title">Our Core <span class="text-gradient-cyan">Capabilities.</span></h2>
+          <p class="section-subtext">Whether you need an MVP from scratch or want to add smart AI features to your existing product, we have you covered.</p>
         </div>
-        <div class="services-grid">
+
+        <div class="services-bento">
+          <!-- Service 1: AI-Powered Mobile Apps -->
           <div class="service-card sr">
-            <div class="svc-icon-wrapper">🌍</div>
-            <h3 class="svc-title font-sans">Web Development</h3>
-            <p class="svc-desc">Web, mobile & custom enterprise platforms built for scale. Delivered with precision.</p>
+            <div class="svc-top">
+              <div class="svc-icon-box">
+                <svg class="svc-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              </div>
+              <h3 class="svc-heading">AI-Powered Mobile Apps</h3>
+              <p class="svc-desc">Cross-platform iOS and Android apps built with Flutter. Fluid performance, beautiful animations, offline support, and smart AI features like smart voice/chat assistants, image recognition, and personalization.</p>
+            </div>
+            <div class="svc-footer">
+              <span class="tech-pill">iOS &amp; Android</span>
+              <span class="tech-pill">Flutter</span>
+              <span class="tech-pill">AI Assistants</span>
+            </div>
           </div>
+
+          <!-- Service 2: Modern Web Apps & SaaS -->
           <div class="service-card sr">
-            <div class="svc-icon-wrapper">🤖</div>
-            <h3 class="svc-title font-sans">Automation</h3>
-            <p class="svc-desc">Intelligent systems and workflows that automate processes and scale your business.</p>
+            <div class="svc-top">
+              <div class="svc-icon-box">
+                <svg class="svc-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <h3 class="svc-heading">Modern Web Applications</h3>
+              <p class="svc-desc">High-speed web platforms, SaaS MVPs, and custom business portals built with React and Next.js. Responsive on all devices, secure, SEO-optimized, and connected to modern databases.</p>
+            </div>
+            <div class="svc-footer">
+              <span class="tech-pill">Next.js &amp; React</span>
+              <span class="tech-pill">Full-Stack</span>
+              <span class="tech-pill">Cloud Database</span>
+            </div>
           </div>
+
+          <!-- Service 3: Custom AI Integration -->
           <div class="service-card sr">
-            <div class="svc-icon-wrapper">🧠</div>
-            <h3 class="svc-title font-sans">AI Integration</h3>
-            <p class="svc-desc">Machine learning integrations and smart chatbots unlocking new capabilities.</p>
+            <div class="svc-top">
+              <div class="svc-icon-box">
+                <svg class="svc-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 3.36 2.06 6.24 5 7.42V20a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2.58c2.94-1.18 5-4.06 5-7.42a8 8 0 0 0-8-8z"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+              </div>
+              <h3 class="svc-heading">Custom AI Integration</h3>
+              <p class="svc-desc">Integrate OpenAI, Claude, or Google Gemini into your workflows. Build custom customer support bots, document summarizers, automated data extractors, and smart content generators tailored to your business.</p>
+            </div>
+            <div class="svc-footer">
+              <span class="tech-pill">OpenAI / Gemini</span>
+              <span class="tech-pill">Custom Prompts</span>
+              <span class="tech-pill">Smart Automations</span>
+            </div>
           </div>
+
+          <!-- Service 4: UI/UX & MVP Development -->
           <div class="service-card sr">
-            <div class="svc-icon-wrapper">📱</div>
-            <h3 class="svc-title font-sans">Android/iOS Apps</h3>
-            <p class="svc-desc">Fully responsive native and cross-platform experiences that work seamlessly.</p>
+            <div class="svc-top">
+              <div class="svc-icon-box">
+                <svg class="svc-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+              </div>
+              <h3 class="svc-heading">UI/UX Design &amp; MVP Builds</h3>
+              <p class="svc-desc">Turn early ideas into interactive, visually stunning prototypes and working MVPs. We help you validate your product concept quickly with real users before investing heavy resources.</p>
+            </div>
+            <div class="svc-footer">
+              <span class="tech-pill">Figma Prototyping</span>
+              <span class="tech-pill">Rapid MVP</span>
+              <span class="tech-pill">Modern UI</span>
+            </div>
+          </div>
+
+          <!-- Service 5: Backend & API Engineering -->
+          <div class="service-card sr">
+            <div class="svc-top">
+              <div class="svc-icon-box">
+                <svg class="svc-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <h3 class="svc-heading">Backend &amp; API Development</h3>
+              <p class="svc-desc">Secure REST &amp; GraphQL APIs, user authentication (OAuth, Firebase Auth), database schemas, payment gateway integrations (Stripe, PayPal), and automated webhooks.</p>
+            </div>
+            <div class="svc-footer">
+              <span class="tech-pill">Node / Python</span>
+              <span class="tech-pill">Auth &amp; Payments</span>
+              <span class="tech-pill">Postgres / Firebase</span>
+            </div>
+          </div>
+
+          <!-- Service 6: Deployment & App Store Publishing -->
+          <div class="service-card sr">
+            <div class="svc-top">
+              <div class="svc-icon-box">
+                <svg class="svc-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+              <h3 class="svc-heading">Deployment &amp; Store Setup</h3>
+              <p class="svc-desc">Complete assistance with Google Play Store &amp; Apple App Store preparation, custom domain setup, cloud hosting on Vercel/AWS, SSL security certificates, and full source code handover.</p>
+            </div>
+            <div class="svc-footer">
+              <span class="tech-pill">Play Store &amp; App Store</span>
+              <span class="tech-pill">Cloud Hosting</span>
+              <span class="tech-pill">100% Code Handover</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Work With Us Section -->
+    <section class="section-padding minimal-about-section">
+      <div class="container">
+        <div class="text-center sr mb-xl">
+          <span class="section-kicker">Why Choose XoviqLabs</span>
+          <h2 class="section-title">A Fresh Perspective on <span class="text-gradient-cyan">Engineering.</span></h2>
+          <p class="section-subtext mx-auto">We are a dedicated team that treats every project as our top priority. We build clean, maintainable code without agency bloat.</p>
+        </div>
+
+        <div class="about-pillars grid-4 sr">
+          <div class="pillar-card">
+            <div class="pillar-icon">✦</div>
+            <h4 class="pillar-title">Dedicated Attention</h4>
+            <p class="pillar-desc">You work directly with the engineers building your app, ensuring clear communication.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">✦</div>
+            <h4 class="pillar-title">High-Velocity Execution</h4>
+            <p class="pillar-desc">We eliminate unnecessary agency bloat to deliver high-quality products efficiently.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">✦</div>
+            <h4 class="pillar-title">AI-Native Approach</h4>
+            <p class="pillar-desc">We build with modern AI from day one so your app stays ahead of the curve.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">✦</div>
+            <h4 class="pillar-title">Code Ownership</h4>
+            <p class="pillar-desc">Full repository access and clean documentation from the very start.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Process Section -->
-    <section id="process" class="process-section">
-      <div class="container sr">
-        <div class="section-header">
-          <h2 class="section-kicker font-mono">How We Work</h2>
-          <h3 class="process-main-title font-sans">A Process That Delivers Results</h3>
+    <section id="process" class="section-padding">
+      <div class="container">
+        <div class="section-head sr">
+          <span class="section-kicker">How We Work</span>
+          <h2 class="section-title">From Concept to <span class="text-gradient-cyan">Launch.</span></h2>
+          <p class="section-subtext">A simple, transparent 4-step workflow to bring your web or mobile app to life without confusion.</p>
         </div>
-        <div class="process-grid">
-          <div class="process-step">
-            <div class="step-number font-mono text-cyan">01</div>
-            <h4 class="step-title font-sans">Discover</h4>
-            <p class="step-desc">Deep dive into your goals, constraints, and technical requirements to align on scope and success metrics.</p>
+
+        <div class="process-steps-grid">
+          <div class="step-card sr">
+            <div class="step-idx text-cyan">01</div>
+            <h4 class="step-name">Free Discovery</h4>
+            <p class="step-body-text">We discuss your app concept, target users, desired features, and architect the optimal tech stack and AI capabilities for your product's scale.</p>
           </div>
-          <div class="process-step">
-            <div class="step-number font-mono text-mint">02</div>
-            <h4 class="step-title font-sans">Design</h4>
-            <p class="step-desc">Architecture, UX wireframes, and technical blueprints — everything mapped before a line of code is written.</p>
+
+          <div class="step-card sr">
+            <div class="step-idx text-mint">02</div>
+            <h4 class="step-name">UI Design &amp; Plan</h4>
+            <p class="step-body-text">We create clean UI mockups and map out the data architecture and AI workflows before writing code so you can visualize the exact product.</p>
           </div>
-          <div class="process-step">
-            <div class="step-number font-mono text-cyan">03</div>
-            <h4 class="step-title font-sans">Build</h4>
-            <p class="step-desc">Agile sprints with weekly demos, transparent checkpoints, and continuous feedback integration.</p>
+
+          <div class="step-card sr">
+            <div class="step-idx text-cyan">03</div>
+            <h4 class="step-name">Build &amp; Demo</h4>
+            <p class="step-body-text">We build your app in rapid sprints, providing live staging preview links and demo updates so you can test features as they are developed.</p>
           </div>
-          <div class="process-step">
-            <div class="step-number font-mono text-mint">04</div>
-            <h4 class="step-title font-sans">Launch</h4>
-            <p class="step-desc">Deploy, monitor, and support — including post-launch care, performance tuning, and iteration support.</p>
+
+          <div class="step-card sr">
+            <div class="step-idx text-mint">04</div>
+            <h4 class="step-name">Launch &amp; Handover</h4>
+            <p class="step-body-text">We deploy your web app or publish your mobile app to the app stores, hand over all source code and documentation, and provide ongoing support.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-      <div class="container sr">
-        <div class="about-layout">
-          <div class="about-left">
-            <span class="about-kicker font-mono">WHY XOVIQLABS</span>
-            <h2 class="about-title font-sans">Intelligence Meets<br><span class="text-gradient-secondary">Execution.</span></h2>
-            <p class="about-desc" style="color: var(--text-muted); margin-top: 1rem; font-size: 1.1rem; max-width: 400px;">
-              We're not just developers — we're strategic partners who understand both technology and business. Every solution we build is designed to move the needle.
-            </p>
+    <!-- Contact & Quote Request Section -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="contact-wrapper sr">
+          <div class="contact-header-text">
+            <span class="section-kicker">Start Building</span>
+            <h2 class="contact-headline">Let's Bring Your Idea <span class="text-gradient-cyan">To Life.</span></h2>
+            <p class="contact-sub">Have an app idea or need AI integrated into your project? Tell us what you're thinking, and we will get back to you with a free consultation and clear plan within 24 hours.</p>
+            <a href="mailto:info@xoviqlabs.com" class="contact-email-badge">
+              ✉ info@xoviqlabs.com
+            </a>
           </div>
-          <div class="about-right">
-            <div class="about-glass-card feat-list">
-              <div class="feat-item">
-                <h4 class="feat-title text-cyan">AI-First Approach</h4>
-                <p class="feat-desc">We integrate intelligent automation into every solution, giving your business a competitive edge from day one.</p>
-              </div>
-              <div class="feat-item">
-                <h4 class="feat-title text-mint">Regional Expertise</h4>
-                <p class="feat-desc">Deep knowledge of KSA, UAE, and Indian markets — compliance, culture, and customer expectations included.</p>
-              </div>
-              <div class="feat-item">
-                <h4 class="feat-title text-cyan">Full-Stack Capability</h4>
-                <p class="feat-desc">Design, development, infrastructure, and strategy all under one roof. Zero coordination overhead.</p>
-              </div>
-              <div class="feat-item">
-                <h4 class="feat-title text-mint">Transparent Process</h4>
-                <p class="feat-desc">Weekly demos, clear milestones, and direct communication at every stage of your project.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Story Section -->
-    <section id="story" class="story-section sr">
-      <div class="container text-center">
-        <span class="story-kicker font-mono">Our Story</span>
-        <h2 class="story-title font-sans">
-          We are a unified group of <span class="text-cyan italic">driven engineers, designers, and innovators.</span> Every solution we build is designed to move the needle. When you partner with us, you aren't talking to middlemen—you are working <span class="text-mint italic">directly with the experts.</span>
-        </h2>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section sr">
-      <div class="container text-center">
-        <div class="contact-text-wrapper">
-          <h2 class="contact-huge-title fill font-sans">START YOUR</h2>
-          <h2 class="contact-huge-title stroke font-sans">PROJECT</h2>
-        </div>
-        <div class="contact-details">
-          <p class="contact-desc font-sans">Have an idea? We'd love to hear it. Reach out and let's build something remarkable together.</p>
-          <a href="mailto:info@xoviqlabs.com" class="contact-email text-cyan font-sans">info@xoviqlabs.com</a>
-          
           <form class="contact-form" action="#" method="POST">
-            <div class="form-row">
-              <input type="text" name="name" placeholder="Your Name" required class="form-input" />
-              <input type="email" name="email" placeholder="Your Email" required class="form-input" />
+            <!-- Contact Input fields -->
+            <div class="form-grid-2">
+              <div class="form-field">
+                <label class="input-label" for="contact-name">Your Name *</label>
+                <input type="text" id="contact-name" name="name" placeholder="John Doe" required class="form-control" />
+              </div>
+              <div class="form-field">
+                <label class="input-label" for="contact-email">Email Address *</label>
+                <input type="email" id="contact-email" name="email" placeholder="john@example.com" required class="form-control" />
+              </div>
             </div>
-            <div class="form-row">
-              <input type="tel" name="phone" placeholder="Your Phone Number" required class="form-input" />
-              <select name="service" required class="form-input form-select">
-                <option value="" disabled selected>Select Service</option>
-                <option value="web">Web Development</option>
-                <option value="app">Mobile App Development</option>
-                <option value="ai">AI Integration & Automation</option>
-                <option value="design">UI/UX & Branding</option>
-                <option value="other">Other</option>
-              </select>
+
+            <div class="form-field">
+              <label class="input-label" for="contact-message">Tell Us About Your Idea *</label>
+              <textarea id="contact-message" name="message" placeholder="Describe what kind of app or website you want, any AI features you need, and your target goals..." required class="form-control"></textarea>
             </div>
-            <textarea name="message" placeholder="Tell us about your project..." rows="4" required class="form-input"></textarea>
-            <button type="submit" class="btn-primary-cyan form-submit" id="form-submit-btn">Send Message</button>
+
+            <button type="submit" class="btn-primary form-submit-btn" id="form-submit-btn">
+              Send Project Inquiry &rarr;
+            </button>
+
             <div id="form-status" class="form-status" aria-live="polite"></div>
           </form>
         </div>
@@ -253,32 +386,55 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <a href="#top" class="nav-brand">
-            <img src="assets/logo-icon.svg" alt="XoviqLabs Icon" class="nav-logo-icon" />
-            <span class="nav-logo-text"><span class="font-poppins">Xoviq</span><span class="font-poppins text-cyan">Labs</span></span>
-          </a>
-          <p class="footer-tagline font-mono">Building the future, one line at a time.</p>
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="assets/logo-xoviq.png" alt="XoviqLabs Logo" class="footer-logo-img" />
+            <span class="nav-brand-text">
+              <span>XOVIQ</span><span class="highlight">LABS</span>
+            </span>
+          </div>
+          <p class="footer-tagline">
+            A software development studio building AI-powered mobile apps and modern web applications for startups and businesses.
+          </p>
         </div>
-        <nav class="footer-links">
-          <a href="about.html">About Us</a>
-          <a href="faq.html">FAQ</a>
-          <a href="privacypolicy.html">Privacy Policy</a>
-          <a href="termsandconditions.html">Terms &amp; Conditions</a>
-        </nav>
+
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#process">How We Work</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Legal &amp; Contact</h4>
+          <ul class="footer-nav-list">
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="termsandconditions.html">Terms of Service</a></li>
+            <li><a href="mailto:info@xoviqlabs.com">info@xoviqlabs.com</a></li>
+            <li><a href="#contact">Get a Quote</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-bottom">
-        <p class="font-mono">&copy; <span id="footer-year"></span> XoviqLabs. All rights reserved.</p>
+
+      <div class="footer-bottom-bar">
+        <p class="footer-copy">&copy; <span id="footer-year"></span> XoviqLabs. All rights reserved.</p>
+        <p class="footer-copy text-dim">Building Modern Web, Mobile &amp; AI Products.</p>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="assets/scripts.js"></script>
-  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

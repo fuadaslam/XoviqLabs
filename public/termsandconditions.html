@@ -3,92 +3,99 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Terms & Conditions | XoviqLabs</title>
-  <meta name="description" content="XoviqLabs Terms and Conditions — the rules and guidelines governing use of our services." />
+  <title>Terms &amp; Conditions | XoviqLabs</title>
+  <meta name="description" content="XoviqLabs Terms and Conditions — terms governing engagements and usage of our engineering services." />
   <link rel="icon" type="image/png" href="assets/logo-xoviq.png" />
+  <link rel="apple-touch-icon" href="assets/logo-xoviq.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
   <style>
-    .page-hero { padding: 8rem 0 3rem; text-align: center; }
-    .page-kicker { font-family: var(--font-mono); color: var(--cyan); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; display: block; }
-    .page-title { font-family: var(--font-sans); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
-    .page-meta { color: var(--text-muted); font-family: var(--font-mono); font-size: 0.8rem; }
-    .legal-section { padding: 3rem 0 6rem; }
-    .legal-block { max-width: 800px; margin: 0 auto; }
-    .legal-block h2 { font-family: var(--font-sans); font-size: 1.2rem; font-weight: 700; color: var(--mint); margin: 2.5rem 0 0.75rem; }
-    .legal-block p, .legal-block ul { color: var(--text-muted); line-height: 1.85; font-size: 0.97rem; margin-bottom: 1rem; }
-    .legal-block ul { padding-left: 1.5rem; }
-    .legal-block li { margin-bottom: 0.4rem; }
-    .legal-block a { color: var(--cyan); }
+    .page-hero { padding: 9rem 0 3rem; text-align: center; }
+    .legal-card { max-width: 840px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 3rem 2rem; backdrop-filter: blur(20px); }
+    @media (min-width: 768px) { .legal-card { padding: 3.5rem; } }
+    .legal-card h2 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--mint); margin: 2.25rem 0 0.75rem; }
+    .legal-card h2:first-child { margin-top: 0; }
+    .legal-card p, .legal-card ul { color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.25rem; }
+    .legal-card ul { padding-left: 1.5rem; }
+    .legal-card li { margin-bottom: 0.5rem; }
+    .legal-card a { color: var(--cyan); }
   </style>
 </head>
-<body class="bg-background text-foreground">
+<body>
+  <!-- Ambient Background -->
+  <div class="ambient-wrapper">
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-glow ambient-glow-1"></div>
+    <div class="ambient-glow ambient-glow-2"></div>
+  </div>
+
+  <!-- Navbar -->
   <nav id="navbar" class="navbar">
     <div class="navbar-inner">
       <a href="index.html" class="nav-brand">
-        <img src="assets/logo-icon.svg" alt="XoviqLabs Icon" class="nav-logo-icon" />
-        <span class="nav-logo-text"><span class="font-poppins">Xoviq</span><span class="font-poppins text-cyan">Labs</span></span>
+        <img src="assets/logo-xoviq.png" alt="XoviqLabs Logo" class="nav-logo-img" />
+        <span class="nav-brand-text"><span>XOVIQ</span><span class="highlight">LABS</span></span>
       </a>
       <div class="nav-links">
         <a href="index.html#services">SERVICES</a>
-        <a href="index.html#work">WORK</a>
-        <a href="index.html#about">ABOUT</a>
+        <a href="index.html#solutions">SOLUTIONS</a>
+        <a href="index.html#process">PROCESS</a>
+        <a href="about.html">ABOUT</a>
       </div>
-      <a href="index.html#contact" class="nav-cta">Contact</a>
+      <div class="nav-actions">
+        <a href="index.html#contact" class="nav-cta">Get a Quote &rarr;</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="index.html#services" class="mobile-link">SERVICES</a>
+      <a href="index.html#solutions" class="mobile-link">SOLUTIONS</a>
+      <a href="index.html#process" class="mobile-link">PROCESS</a>
+      <a href="about.html" class="mobile-link">ABOUT</a>
+      <a href="faq.html" class="mobile-link">FAQ</a>
+      <a href="index.html#contact" class="mobile-link mobile-link-cta">START A PROJECT</a>
+    </div>
+  </div>
 
   <main>
     <section class="page-hero">
       <div class="container">
-        <span class="page-kicker">Legal</span>
-        <h1 class="page-title">Terms &amp; <span class="text-mint">Conditions</span></h1>
-        <p class="page-meta">Effective Date: January 1, 2025</p>
+        <span class="section-kicker">Terms of Service</span>
+        <h1 class="section-title">Terms &amp; <span class="text-gradient-mint">Conditions.</span></h1>
+        <p class="section-subtext" style="font-family: var(--font-mono); font-size: 0.85rem;">Last Updated: January 1, 2026</p>
       </div>
     </section>
 
-    <section class="legal-section">
+    <section class="section-padding" style="padding-top: 0;">
       <div class="container">
-        <div class="legal-block">
-          <p>By accessing and using the XoviqLabs website and services, you agree to comply with and be bound by these Terms and Conditions. If you do not agree, please refrain from using our services.</p>
+        <div class="legal-card">
+          <p>Welcome to XoviqLabs. By accessing our site or engaging our engineering, AI development, and design services, you agree to comply with the terms set forth below.</p>
 
-          <h2>1. Acceptance of Terms</h2>
-          <p>These Terms and Conditions constitute a legally binding agreement between you and XoviqLabs. Your continued use of our website or services constitutes acceptance of these terms in full.</p>
+          <h2>1. Engagement &amp; Scope of Work</h2>
+          <p>XoviqLabs provides custom web application architecture, mobile engineering, AI systems development, and UI/UX design. Specific deliverables, sprint schedules, milestones, and payment terms for client projects are defined in individual Statement of Work (SOW) documents.</p>
 
-          <h2>2. Services</h2>
-          <p>XoviqLabs provides custom software development, AI integration, web design, mobile application development, and related digital services. The specific scope, deliverables, timelines, and pricing for any engagement are defined in a separate project proposal or contract.</p>
+          <h2>2. Intellectual Property Rights</h2>
+          <p>Unless otherwise stipulated in a master services agreement, all custom code, assets, and deliverables created for a client are assigned to the client upon receipt of full milestone payments. XoviqLabs retains ownership of proprietary pre-built libraries and internal developer utilities.</p>
 
-          <h2>3. Intellectual Property</h2>
-          <p>All content, designs, code, graphics, and other intellectual property created and provided by XoviqLabs are owned by XoviqLabs unless otherwise explicitly stated in a formal project contract. Upon full payment, ownership of custom work products may be transferred to the client as defined in the project agreement.</p>
+          <h2>3. Confidentiality &amp; Mutual Non-Disclosure</h2>
+          <p>Both parties agree to hold in strict confidence all proprietary technical specs, business data, and system architectures shared during discussions or project execution.</p>
 
-          <h2>4. Acceptable Use</h2>
-          <p>You agree to use our services only for lawful purposes. You are prohibited from:</p>
-          <ul>
-            <li>Transmitting any malicious software or harmful code</li>
-            <li>Engaging in unauthorised data collection or scraping</li>
-            <li>Disrupting or interfering with the performance of our website or infrastructure</li>
-            <li>Using our services to facilitate illegal activities</li>
-          </ul>
+          <h2>4. Limitation of Liability</h2>
+          <p>To the maximum extent permitted by applicable law, XoviqLabs shall not be liable for any indirect, incidental, or consequential damages resulting from the use or inability to use delivered systems. Total liability for any engagement is limited to fees paid under the applicable SOW.</p>
 
-          <h2>5. Payment Terms</h2>
-          <p>Payment schedules are defined in individual project proposals. Invoices are due within the timeframe stated on each invoice. XoviqLabs reserves the right to pause or terminate work on projects with overdue payments.</p>
+          <h2>5. Governing Law</h2>
+          <p>These terms are governed by commercial standards without regard to conflict of law provisions.</p>
 
-          <h2>6. Confidentiality</h2>
-          <p>Both parties agree to keep confidential any proprietary information shared during the course of an engagement. This obligation survives the termination of any project or agreement.</p>
-
-          <h2>7. Limitation of Liability</h2>
-          <p>XoviqLabs shall not be held liable for any indirect, incidental, special, or consequential damages arising from the use or inability to use our services, to the maximum extent permitted by applicable law. Our total liability for any claim shall not exceed the total fees paid for the specific service giving rise to the claim.</p>
-
-          <h2>8. Governing Law</h2>
-          <p>These Terms and Conditions are governed by the applicable laws of the jurisdictions we serve — including Saudi Arabia, the UAE, and India — without regard to conflict of law provisions. Disputes shall be resolved through good-faith negotiation before any formal proceedings.</p>
-
-          <h2>9. Modifications</h2>
-          <p>We reserve the right to modify these Terms at any time. Updated Terms will be posted on this page with a revised effective date. Continued use of our website or services after changes constitutes acceptance of the revised Terms.</p>
-
-          <h2>10. Contact</h2>
-          <p>For any questions regarding these Terms and Conditions, please contact us at <a href="mailto:info@xoviqlabs.com">info@xoviqlabs.com</a>.</p>
+          <h2>6. Inquiries &amp; Notice</h2>
+          <p>For any legal or contractual inquiries, please contact our team at <a href="mailto:info@xoviqlabs.com">info@xoviqlabs.com</a>.</p>
         </div>
       </div>
     </section>
@@ -96,26 +103,40 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-brand">
-            <img src="assets/logo-icon.svg" alt="XoviqLabs Icon" class="nav-logo-icon" />
-            <span class="nav-logo-text"><span class="font-poppins">Xoviq</span><span class="font-poppins text-cyan">Labs</span></span>
-          </a>
-          <p class="footer-tagline font-mono">Building the future, one line at a time.</p>
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="assets/logo-xoviq.png" alt="XoviqLabs Logo" class="footer-logo-img" />
+            <span class="nav-brand-text"><span>XOVIQ</span><span class="highlight">LABS</span></span>
+          </div>
+          <p class="footer-tagline">Agile digital engineering studio building high-performance web applications, mobile platforms, and custom AI integrations.</p>
         </div>
-        <nav class="footer-links">
-          <a href="about.html">About Us</a>
-          <a href="faq.html">FAQ</a>
-          <a href="privacypolicy.html">Privacy Policy</a>
-          <a href="termsandconditions.html">Terms &amp; Conditions</a>
-        </nav>
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#solutions">Solutions</a></li>
+            <li><a href="index.html#process">Process</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Legal</h4>
+          <ul class="footer-nav-list">
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="termsandconditions.html">Terms of Service</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-bottom">
-        <p class="font-mono">&copy; <span id="footer-year"></span> XoviqLabs. All rights reserved.</p>
+      <div class="footer-bottom-bar">
+        <p class="footer-copy">&copy; <span id="footer-year"></span> XoviqLabs. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
+  <script src="assets/scripts.js"></script>
   <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
